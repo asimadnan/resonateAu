@@ -1,5 +1,54 @@
 
-<h2>Hello World</h2>
-<p>
-  The time is now: <%= Time.now %>
-</p>
+
+<main role="main">
+
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">ResonateAU Twitter Feed</h1>
+      <p class="lead text-muted">The tweets are fetched using Twitter API, they will be Dynamically updated.</p>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        <% @tweets_html.each do |tweet| %>
+
+          <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <p class="card-text"><%= tweet[1].html_safe %></p>
+
+            </div>
+          </div>
+        </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+
+<style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+</style>
+<!-- Custom styles for this template -->
+<link href="album.css" rel="stylesheet">
+
+
