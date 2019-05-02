@@ -2,8 +2,8 @@ class HomeController < ApplicationController
   
   def index
     config = {
-        consumer_key:    "Mrob8koLQ3WYPE6RVADwOnnz4",
-        consumer_secret: "wWnBOZr6138UnBwPVaB9iBJLMSV8nzCyvxk8CB8Wl2R9vOMRmP",
+        consumer_key:    Rails.application.config.api_key,
+        consumer_secret: Rails.application.config.api_secret
     }
 
     client = Twitter::REST::Client.new(config)
