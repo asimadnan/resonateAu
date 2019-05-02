@@ -8,7 +8,7 @@ class HomeController < ApplicationController
 
     client = Twitter::REST::Client.new(config)
 
-    @user_tweets = client.user_timeline('ResonateAU')
+    @user_tweets = client.user_timeline('ResonateAU', count: 9)
 
     @tweets_html = {}
     @user_tweets.each do |a|
